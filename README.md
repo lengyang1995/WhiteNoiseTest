@@ -5,17 +5,4 @@ It also contans a code for Chernozhukov, Chetverikov, and Kato (2019), ``Inferen
 
 
 [example_file.txt](https://github.com/lengyang1995/WhiteNoiseTest/files/10388444/example_file.txt)
-source('wnSVAR.R')  # our proposed method
-X = matrix(rnorm(100*20), 100, 20)
-output = wnSVAR(X, K = 10)
 
-output$pValue0  # p-values at lags 1--K, based on infinity-norm (maxi-norm)
-output$pValue2  # p-values at lags 1--K, based on L2-norm (maxi-norm)
-
-output$pValue0sn   # p-values at lags 1--K, based on infinity-norm (maxi-norm) for sn = p
-output$pValue2sn  # p-values at lags 1--K, based on L2-norm (maxi-norm) for sn = p
-
-source('CCK.R')  # based on Chernozhukov et al (2019)
-out.cck = CCK(X)
-out.cck$pValue0  # p-values at lags 1--K, based on infinity-norm (maxi-norm)
-out.cck$pValue2  # p-values at lags 1--K, based on L2-norm (maxi-norm)
